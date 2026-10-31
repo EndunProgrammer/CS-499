@@ -1,0 +1,101 @@
+/* ==========================================================================
+   1. GLOBAL VARIABLES & DESIGN TOKENS
+   ========================================================================== */
+:root {
+    /* Color Palette */
+    --bg-dark: #22110E;             /* Deep brownish-maroon primary background */
+    --bg-surface: #2E1915;          /* Slightly lighter brown for cards and containers */
+    --accent-orange: #FF5A25;       /* Bright copper-orange for buttons, highlights, and logos */
+    --text-primary: #FFFFFF;        /* Off-white/pure white for main titles */
+    --text-muted: #BC928A;          /* Soft muted rose/brown for secondary text and descriptions */
+    
+    /* Typography & Borders */
+    --font-heading: 'Lora', 'Georgia', serif;
+    --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+    --radius-lg: 24px;                /* Generous curves for sections and large components */
+    --radius-md: 12px;                /* Standard curves for buttons and smaller cards */
+}
+
+/* ==========================================================================
+   2. BASE RESET & GLOBAL STYLES
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+/* ==========================================================================
+   3. TYPOGRAPHY HIERARCHY
+   ========================================================================== */
+h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 400;
+    text-align: center;
+    max-width: 800px;
+    margin: 4rem auto 2rem auto;
+}
+
+/* For styling specific highlight words in your titles */
+h1 span.accent {
+    color: var(--accent-orange);
+    font-style: italic;
+}
+
+p.description {
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   4. UI COMPONENTS (BUTTONS & CARDS)
+   ========================================================================== */
+/* Pill Button */
+.btn-primary {
+    background-color: var(--accent-orange);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-weight: 500;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* Secondary/Outline Button */
+.btn-outline {
+    background-color: transparent;
+    color: var(--accent-orange);
+    border: 1px solid var(--accent-orange);
+    padding: 0.6rem 1.5rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Container Dashboard Cards */
+.card {
+    background-color: var(--bg-surface);
+    border: 1px solid rgba(188, 146, 138, 0.15); /* Thin, subtle border layout */
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+}
